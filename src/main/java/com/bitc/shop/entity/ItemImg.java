@@ -19,7 +19,7 @@ public class ItemImg extends BaseEntity{
 
     private String imgUrl;
 
-    private String repimgYn;
+    private String repImgYn;
 
 //    Item 엔티티와 관계 설정 시 N:1 방식으로 설정
 //  @JoinColumn : 지정한 테이블에서 참조키를 가져옴, 반드시 실제 컬럼명으로 입력
