@@ -1,6 +1,7 @@
 package com.bitc.shop.entity;
 
 import lombok.Data;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
@@ -23,4 +24,22 @@ public class CartItem extends BaseEntity {
 
     @Column(name = "count")
     private int count = 0;
+
+    public static CartItem createCartItem(Cart cart, Item item, int count){
+        CartItem cartItem = new CartItem();
+        cartItem.setCart(cart);
+        cartItem.setItem(item);
+        cartItem.setCount(count);
+        return cartItem;
+    }
+
+//     장바구니에 있는 상품의 개수를 추가
+    public void addCount(int count){
+        this.count += count;
+    }
+
+    public void updateCount(int count){
+        this.count = count;
+    }
+
 }
